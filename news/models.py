@@ -49,11 +49,11 @@ class Post(models.Model):
     text = models.TextField()
     rating = models.SmallIntegerField(default=0)
 
-    def add_like(self):
+    def like(self):
         self.rating += 1
         self.save()
 
-    def add_dislike(self):
+    def dislike(self):
         self.rating -= 1
         self.save()
 
@@ -74,11 +74,11 @@ class Comment(models.Model):
 
     datetime = models.DateTimeField(auto_now_add=True)
 
-    def add_like(self):
+    def like(self):
         self.rating += 1
         self.save()
 
-    def add_dislike(self):
+    def dislike(self):
         self.rating -= 1
         self.save()
 

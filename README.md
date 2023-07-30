@@ -40,20 +40,20 @@
 >>> Comment.objects.create(post=Post.objects.get(id=3), user=Author.objects.get(id=1).author, text='somecomment')
 <Comment: Tom - Tom - 0 - 2023-07-30 22:55:50.313914+00:00 - sometitle_AR_2 - 0>
 
->>> Comment.objects.get(id=1).add_like()
->>> Post.objects.get(id=1).add_like()
->>> Post.objects.get(id=2).add_like()
->>> Post.objects.get(id=3).add_dislike()
->>> Comment.objects.get(id=2).add_dislike()
->>> Comment.objects.get(id=3).add_like()
+>>> Comment.objects.get(id=1).like()
+>>> Post.objects.get(id=1).like()
+>>> Post.objects.get(id=2).like()
+>>> Post.objects.get(id=3).dislike()
+>>> Comment.objects.get(id=2).dislike()
+>>> Comment.objects.get(id=3).like()
 >>> Post.objects.get(id=1).rating
 1
 
->>> Post.objects.get(id=1).add_like()
->>> Post.objects.get(id=1).add_like()
->>> Post.objects.get(id=1).add_like()
->>> Post.objects.get(id=1).add_like()
->>> Post.objects.get(id=1).add_like()
+>>> Post.objects.get(id=1).like()
+>>> Post.objects.get(id=1).like()
+>>> Post.objects.get(id=1).like()
+>>> Post.objects.get(id=1).like()
+>>> Post.objects.get(id=1).like()
 >>> Post.objects.get(id=1).rating
 6
 
